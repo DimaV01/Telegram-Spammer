@@ -12,7 +12,7 @@
 
 1. Клонируйте этот репозиторий:
     ```bash
-    git clone https://github.com/yourusername/telegram-message-sender.git
+    git clone https://github.com/DimaV01/telegram-message-sender.git
     cd telegram-message-sender
     ```
 
@@ -26,7 +26,7 @@
 
 1. Запустите скрипт:
     ```bash
-    python send_message.py
+    python RandomMessages.py
     ```
 
 2. Появится окно GUI. Введите ваш API ID и API Hash, которые можно получить, следуя [этой ссылке](https://tlgrm.ru/docs/api/obtaining_api_id#:~:text=Для%20получения%20API%20id%20и,development%20tools'%20и%20заполнить%20форму.).
