@@ -12,7 +12,7 @@
 
 1. Клонируйте этот репозиторий:
     ```bash
-    git clone https://github.com/yourusername/telegram-message-sender.git
+    git clone https://github.com/DimV01/telegram-message-sender.git
     cd telegram-message-sender
     ```
 
