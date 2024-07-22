@@ -93,7 +93,7 @@ def save_data():
         'api_id': api_id_entry.get(),
         'api_hash': api_hash_entry.get(),
         'recipient': recipient_entry.get(),
-        'compliments': messages_entry.get("1.0", tk.END).strip()
+        'messages': messages_entry.get("1.0", tk.END).strip()
     }
     with open(DATA_FILE, 'w') as f:
         json.dump(data, f)
@@ -106,7 +106,7 @@ def load_data():
             api_id_entry.insert(0, data.get('api_id', ''))
             api_hash_entry.insert(0, data.get('api_hash', ''))
             recipient_entry.insert(0, data.get('recipient', ''))
-            messages_entry.insert("1.0", data.get('compliments', ''))
+            messages_entry.insert("1.0", data.get('messages', ''))
             asyncio.run(load_username())
     except FileNotFoundError:
         pass
@@ -135,6 +135,7 @@ def delete_session():
 # Создаем GUI
 root = tk.Tk()
 root.title("Telegram Spammer")
+root.iconbitmap('icon.ico')
 
 tk.Label(root, text="Username:").grid(row=0, column=0, padx=10, pady=5)
 username_label = tk.Label(root, text="")
@@ -185,10 +186,8 @@ delete_button.grid(row=7, column=1, padx=10, columnspan=1, pady=10)
 status_label = tk.Label(root, text="", fg='red')
 status_label.grid(row=8, columnspan=2, pady=10)
 
-# Загрузка данных при запуске
 load_data()
 
-# Сохранение данных при закрытии
 root.protocol("WM_DELETE_WINDOW", lambda: [save_data(), root.destroy()])
 
 root.mainloop()
